@@ -11,11 +11,11 @@ ENV ANSIBLE_HOST_KEY_CHECKING False
 
 # Install ansible and utils
 RUN apt-get update --yes && \
-	apt-get install software-properties-common --yes && \
-	apt-add-repository ppa:ansible/ansible --yes && \
-	apt-get install ansible rsync --yes
+    apt-get install software-properties-common --yes && \
+    apt-add-repository ppa:ansible/ansible --yes && \
+    apt-get install ansible rsync --yes
 
 # Extract ssh key from BITBUCKET_BASE64_SSH_KEY env variable
 ONBUILD RUN mkdir -p ~/.ssh && \
-	echo $BITBUCKET_BASE64_SSH_KEY | base64 --decode > ~/.ssh/id_rsa && \
-	chmod 600 ~/.ssh/id_rsa
+    echo $BITBUCKET_BASE64_SSH_KEY | base64 --decode > ~/.ssh/id_rsa && \
+    chmod 600 ~/.ssh/id_rsa
