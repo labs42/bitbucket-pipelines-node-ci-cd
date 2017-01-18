@@ -16,4 +16,4 @@ In order to make Bitbucket Pipelines be able to deploy your application to remot
 server, you shoud add a BITBUCKET_BASE64_SSH_KEY environment variable with 
 base64 encoded private ssh key.
 
-More information about (https://confluence.atlassian.com/bitbucket/environment-variables-in-bitbucket-pipelines-794502608.html)[environment variables in Bitbucket Pipelines].
+More information about [https://confluence.atlassian.com/bitbucket/environment-variables-in-bitbucket-pipelines-794502608.html](environment variables in Bitbucket Pipelines).
