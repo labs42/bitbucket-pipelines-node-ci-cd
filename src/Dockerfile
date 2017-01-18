@@ -15,7 +15,6 @@ RUN apt-get update --yes && \
     apt-add-repository ppa:ansible/ansible --yes && \
     apt-get install ansible rsync --yes
 
-# Extract ssh key from BITBUCKET_BASE64_SSH_KEY env variable
-ONBUILD RUN mkdir -p ~/.ssh && \
-    echo $BITBUCKET_BASE64_SSH_KEY | base64 --decode > ~/.ssh/id_rsa && \
-    chmod 600 ~/.ssh/id_rsa
+# Add create_id_rsa executable to be used in child containers
+COPY create_id_rsa /usr/local/bin
+RUN chmod +x /usr/local/bin/create_id_rsa
