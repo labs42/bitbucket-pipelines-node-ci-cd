@@ -15,6 +15,9 @@ RUN apt-get update --yes && \
     apt-add-repository ppa:ansible/ansible --yes && \
     apt-get install ansible rsync --yes
 
+# Add global ansible config file
+COPY ansible.cfg /etc/ansible
+
 # Add create_id_rsa executable to be used in child containers
 COPY create_id_rsa /usr/local/bin
 RUN chmod +x /usr/local/bin/create_id_rsa
