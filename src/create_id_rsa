@@ -3,6 +3,7 @@
 set -e
 
 mkdir -p ~/.ssh
+chmod 700 ~/.ssh
 echo $BITBUCKET_BASE64_SSH_KEY | base64 --decode > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 
