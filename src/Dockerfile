@@ -1,4 +1,4 @@
-FROM node:7
+FROM node:13
 
 MAINTAINER Alexander I. Antipin <alex@antipin.com>
 
